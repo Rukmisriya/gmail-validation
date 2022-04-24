@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gmail Validation </title>
+        <meta charset="utf-8">
+        <meta name="viewpost" content="width=device-width" initial-scale="1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <style>
+            .box{
+                width: 10px;
+                background-color:rgba(211, 211, 211, 0.301);
+                padding: 10px;
+                margin:auto;
+                margin-top: 5%;
+            }
+            .text{
+                text-align: center;
+            }
+            .text1{
+                text-align: right;
+            }
+            .color{
+                color: blue;
+            }
+           body{
+            background-color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+      </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+        <form onsubmit="validate">
+        <div class="row">
+        <div class="box col-sm-6">
+        <div class="text"><br><br>
+        <img src="google.png" width="220" height="40">
+        <br><br><b>Sign in</b><br><br>to continue to Gmail
+        </div>
+        <div class="form-group">
+        <br><input type="email" name="" id="email" class="form-control" placeholder="Email or phone">
+        <span id="emailerror" class="text-warning"></span><br><br>
+        <input type="password" name="" id="pwd" class="form-control" placeholder="Password">
+        <span id="pwderror" class="text-danger"></span>
+            
+        </div>
+        <br><div class="form-check">
+        <div class="form-check-label">
+        <input type="checkbox" id="check" class="form-check-input">
+        <label>  Show password</label>
+        </div></div>
+        <div class="color">
+        <br>Forget password?
+        </div>
+        <div><br>Not your computer?Use Guest mode to sign in privately.</div>
+        <div class="color">Learn more<br><br><br>Create account           
+        <div class="text1">
+        <input type="submit" class="btn btn-primary" value="Next">
+        </div></div>
+        </div></div>
+        </div>
+        </form>
+        </div>Akshitha<br>20B01A05A4
+        <script>
+        function validate(){
+            var email=document.getElementById("email").value;
+            var pwd=document.getElementById("pwd").value;
+            var reg1= /^[A-Za-z0-9_.|#%$*?+""^{}]+@[A-Za-z0-9.-]+)*$/;
+            var reg2= /^[a-zA-Z0-9]{6, }$/;
+            if (email.match(reg1)) {
+                document.getElementById('emailerror').innerHTML=" ";
+            }
+            else {
+                document.getElementById('emailerror').innerHTML="Invalid email or phone ";
+                return false;
+            }
+            if (pwd.match(reg2)) {
+                document.getElementById('pwderror').innerHTML=" ";
+            }
+            else {
+                document.getElementById('pwderror').innerHTML="Incorrect Pasword (Min 6 characters)";
+                return false;
+            }
+        }
+        </script>
+    </body>
+</html>
