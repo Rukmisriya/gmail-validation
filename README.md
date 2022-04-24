@@ -1,1 +1,0 @@
-# gmail-validation using bootstrap
